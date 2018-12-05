@@ -7,7 +7,10 @@
   "author": "",
   "license": "MIT",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "prettier": "node ./scripts/prettier/index.js write-chenged",
+    "prettier:all": "node ./scripts/prettier/index.js write"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
