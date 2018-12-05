@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
