@@ -1,0 +1,11 @@
+# ignore tmp because this is temporary directory
+tmp/
+
+# TODO: No parser could be inferred for file:
+.*
+
+# ignore files bacause webpack uglify files
+dist/
+
+# igrnore because it make only by yarn
+yarn.lock
