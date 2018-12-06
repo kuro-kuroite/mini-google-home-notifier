@@ -3,6 +3,7 @@ module.exports = {
     "git add",
   ],
   "*.js": [
+    "yarn prettier",
     "git add",
   ],
   "*.{json,yml}": [
