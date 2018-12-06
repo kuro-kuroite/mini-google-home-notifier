@@ -5,10 +5,12 @@ module.exports = {
   "*.babel.js": [
     "yarn babel",
     "yarn prettier",
+    "yarn eslint",
     "git add",
   ],
   "*.js": [
     "yarn prettier",
+    "yarn eslint",
     "git add",
   ],
   "*.{json,yml}": [
