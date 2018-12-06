@@ -1,0 +1,3 @@
+# for npm-scripts
+scripts/**/*.js
+!scripts/**/*.babel.js
