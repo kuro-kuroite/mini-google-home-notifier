@@ -2,6 +2,11 @@ module.exports = {
   "*.min.*": [
     "git add",
   ],
+  "*.babel.js": [
+    "yarn babel",
+    "yarn prettier",
+    "git add",
+  ],
   "*.js": [
     "yarn prettier",
     "git add",
