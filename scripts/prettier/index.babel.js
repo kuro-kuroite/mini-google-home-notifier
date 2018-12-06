@@ -11,11 +11,10 @@
 
 import chalk from 'chalk';
 import * as fs from 'fs';
-import * as path from 'path';
 import * as glob from 'glob';
 import * as prettier from 'prettier';
+import cosmiconfig from 'cosmiconfig';
 import { listChangedFiles } from '../shared/listChangedFiles';
-const prettierConfigPath = path.resolve(process.cwd(), './.prettierrc.js');
 
 const mode = process.argv[2] || 'check';
 const shouldWrite = mode === 'write' || mode === 'write-changed';
@@ -34,9 +33,8 @@ if (!files.length) {
 }
 
 files.forEach(file => {
-  const options = prettier.resolveConfig.sync(file, {
-    config: prettierConfigPath,
-  });
+  const options = cosmiconfig('prettier').searchSync().config;
+
   try {
     const input = fs.readFileSync(file, 'utf8');
     if (shouldWrite) {

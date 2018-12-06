@@ -11,11 +11,11 @@ var _chalk = _interopRequireDefault(require('chalk'));
 
 var fs = _interopRequireWildcard(require('fs'));
 
-var path = _interopRequireWildcard(require('path'));
-
 var glob = _interopRequireWildcard(require('glob'));
 
 var prettier = _interopRequireWildcard(require('prettier'));
+
+var _cosmiconfig = _interopRequireDefault(require('cosmiconfig'));
 
 var _listChangedFiles = require('../shared/listChangedFiles');
 
@@ -48,7 +48,6 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-var prettierConfigPath = path.resolve(process.cwd(), './.prettierrc.js');
 var mode = process.argv[2] || 'check';
 var shouldWrite = mode === 'write' || mode === 'write-changed';
 var onlyChanged = mode === 'check-changed' || mode === 'write-changed';
@@ -70,9 +69,7 @@ if (!files.length) {
 }
 
 files.forEach(function(file) {
-  var options = prettier.resolveConfig.sync(file, {
-    config: prettierConfigPath,
-  });
+  var options = (0, _cosmiconfig.default)('prettier').searchSync().config;
 
   try {
     var input = fs.readFileSync(file, 'utf8');
