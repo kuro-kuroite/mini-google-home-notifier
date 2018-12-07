@@ -1,5 +1,5 @@
-'use strict';
-
+// NOTE: npm-scripts is used only development
+/* eslint-disable import/no-extraneous-dependencies */
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as babel from '@babel/core';
@@ -11,7 +11,7 @@ const shouldWrite = mode === 'write' || mode === 'write-changed';
 const onlyChanged = mode === 'check-changed' || mode === 'write-changed';
 
 const changedFiles = onlyChanged ? listChangedFiles() : null;
-let didWarn = false;
+const didWarn = false;
 let didError = false;
 
 const files = glob
@@ -36,7 +36,7 @@ files.forEach(file => {
     }
   } catch (error) {
     didError = true;
-    console.log('\n\n' + error.message);
+    console.log(`\n\n${error.message}`);
     console.log(file);
   }
 });

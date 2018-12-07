@@ -4,12 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-'use strict';
 
 import { execFileSync } from 'child_process';
 
 const exec = (command, args) => {
-  console.log('> ' + [command].concat(args).join(' '));
+  console.log(`> ${[command].concat(args).join(' ')}`);
   const options = {
     cwd: process.cwd(),
     env: process.env,
@@ -33,4 +32,5 @@ const listChangedFiles = () => {
   ]);
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { listChangedFiles };

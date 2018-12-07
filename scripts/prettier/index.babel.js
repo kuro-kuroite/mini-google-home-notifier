@@ -4,11 +4,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-'use strict';
 
 // Based on similar script in Jest
 // https://github.com/facebook/jest/blob/a7acc5ae519613647ff2c253dd21933d6f94b47f/scripts/prettier.js
 
+// NOTE: npm-scripts is used only development
+/* eslint-disable import/no-extraneous-dependencies */
 import chalk from 'chalk';
 import * as fs from 'fs';
 import * as glob from 'glob';
@@ -42,29 +43,24 @@ files.forEach(file => {
       if (output !== input) {
         fs.writeFileSync(file, output, 'utf8');
       }
-    } else {
-      if (!prettier.check(input, options)) {
-        if (!didWarn) {
-          console.log(
-            '\n' +
-              chalk.red(
-                `  This project uses prettier to format all JavaScript code.\n`,
-              ) +
-              chalk.dim(`    Please run `) +
-              chalk.reset('yarn prettier:all') +
-              chalk.dim(
-                ` and add changes to files listed below to your commit:`,
-              ) +
-              `\n\n`,
-          );
-          didWarn = true;
-        }
-        console.log(file);
+    } else if (!prettier.check(input, options)) {
+      if (!didWarn) {
+        console.log(
+          `\n${chalk.red(
+            `  This project uses prettier to format all JavaScript code.\n`,
+          )}${chalk.dim(`    Please run `)}${chalk.reset(
+            'yarn prettier:all',
+          )}${chalk.dim(
+            ` and add changes to files listed below to your commit:`,
+          )}\n\n`,
+        );
+        didWarn = true;
       }
+      console.log(file);
     }
   } catch (error) {
     didError = true;
-    console.log('\n\n' + error.message);
+    console.log(`\n\n${error.message}`);
     console.log(file);
   }
 });
