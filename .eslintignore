@@ -1,3 +1,6 @@
 # for npm-scripts
 scripts/**/*.js
 !scripts/**/*.babel.js
+
+# compiled file
+dist/**/*.js
