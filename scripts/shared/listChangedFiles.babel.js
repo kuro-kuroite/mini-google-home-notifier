@@ -33,4 +33,4 @@ const listChangedFiles = () => {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export { listChangedFiles };
+export { exec, listChangedFiles };

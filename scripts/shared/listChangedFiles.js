@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.listChangedFiles = void 0;
+exports.listChangedFiles = exports.exec = void 0;
 
 var _child_process = require("child_process");
 
@@ -25,6 +25,8 @@ var exec = function exec(command, args) {
   };
   return (0, _child_process.execFileSync)(command, args, options);
 };
+
+exports.exec = exec;
 
 var execGitCmd = function execGitCmd(args) {
   return exec('git', args).trim().toString().split('\n');

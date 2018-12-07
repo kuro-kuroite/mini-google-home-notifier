@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "deploy": "node ./scripts/babel/deploy.js src/js",
     ".babel": "node ./scripts/babel/index.js write-chenged",
     ".babel:all": "node ./scripts/babel/index.js write",
     ".linc": "node ./scripts/tasks/linc.js",
