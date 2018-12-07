@@ -8,12 +8,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "babel": "node ./scripts/babel/index.js write-chenged",
-    "babel:all": "node ./scripts/babel/index.js write",
-    "linc": "node ./scripts/tasks/linc.js",
-    "lint": "node ./scripts/tasks/eslint.js",
-    "prettier": "node ./scripts/prettier/index.js write-chenged",
-    "prettier:all": "node ./scripts/prettier/index.js write"
+    ".babel": "node ./scripts/babel/index.js write-chenged",
+    ".babel:all": "node ./scripts/babel/index.js write",
+    ".linc": "node ./scripts/tasks/linc.js",
+    ".lint": "node ./scripts/tasks/eslint.js",
+    ".prettier": "node ./scripts/prettier/index.js write-chenged",
+    ".prettier:all": "node ./scripts/prettier/index.js write"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",

@@ -49,7 +49,7 @@ files.forEach(file => {
           `\n${chalk.red(
             `  This project uses prettier to format all JavaScript code.\n`,
           )}${chalk.dim(`    Please run `)}${chalk.reset(
-            'yarn prettier:all',
+            'yarn .prettier:all',
           )}${chalk.dim(
             ` and add changes to files listed below to your commit:`,
           )}\n\n`,
