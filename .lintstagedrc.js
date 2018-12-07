@@ -1,22 +1,27 @@
 module.exports = {
-  "*.min.*": [
-    "git add",
-  ],
-  "*.babel.js": [
-    "yarn babel",
-    "yarn prettier",
-    "yarn eslint",
-    "git add",
-  ],
-  "*.js": [
-    "yarn prettier",
-    "yarn eslint",
-    "git add",
-  ],
-  "*.{json,yml}": [
-    "git add",
-  ],
-  "*.{md}": [
-    "git add",
+  "linters": {
+    "*.min.*": [
+      "git add",
+    ],
+    "*.babel.js": [
+      "yarn babel",
+      "yarn prettier",
+      "yarn eslint",
+      "git add",
+    ],
+    "{,!(scripts)/}**/*.js": [
+      "yarn prettier",
+      "yarn eslint",
+      "git add",
+    ],
+    "*.{json,yml}": [
+      "git add",
+    ],
+    "*.{md}": [
+      "git add",
+    ],
+  },
+  "ignore": [
+    "**/dist/*.js",
   ],
 };
