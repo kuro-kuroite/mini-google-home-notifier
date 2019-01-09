@@ -137,5 +137,9 @@ EOF
 git config --global core.editor vim
 EOF
     source ~/.bash_profile
+
+    # for mdns
+    sudo apt install -y python-minimal
+    sudo apt install -y libnss-mdns libavahi-compat-libdnssd-dev
   SHELL
 end

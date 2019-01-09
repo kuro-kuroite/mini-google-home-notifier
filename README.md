@@ -5,6 +5,9 @@ google-home-notifier で必要な部分のみを Promise でデコレートし�
 ### Installation
 
 ```bash
+$ vagrant up
+$ vagrant ssh
+$ cd /vagrant
 $ yarn add https://github.com/kuro-kuroite/mini-google-home-notifier.git
 ```
 
@@ -21,7 +24,7 @@ const options = {
 // Pass the name or IP address of your device
 const myHome = new GoogleHomeNotifier('192.168.10.151', options);
 
-myHome.speak('こんにちは');
+// myHome.speak('こんにちは');
 myHome.push('http://www.ne.jp/asahi/music/myuu/wave/asibue.mp3');
 ```
 
