@@ -5,14 +5,14 @@ google-home-notifier で必要な部分のみを Promise でデコレートし�
 ### Installation
 
 ```bash
-$ yarn add mini-google-home-notifier
+$ yarn add https://github.com/kuro-kuroite/mini-google-home-notifier.git
 ```
 
 ### Example
 
 ```js
 // import { GoogleHomeNotifier } from 'mini-google-home-notifier';
-const GoogleHomeNotifier = require("google-home-push").GoogleHomeNotifier;
+const GoogleHomeNotifier = require("mini-google-home-notifier").GoogleHomeNotifier;
 
 const options = {
   language: 'ja',
