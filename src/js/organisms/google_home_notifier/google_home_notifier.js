@@ -34,18 +34,20 @@ export default class GoogleHomeNotifier {
 
     return new Promise((resolve, reject) => {
       const browser = createMdnsBrowser();
-      browser.start();
+      browser.on('ready', () => {
+        browser.discover();
+      });
 
-      browser.on('serviceUp', service => {
+      browser.on('update', service => {
         browser.stop();
 
         // Only use the first IP addresses in the array
         const address = service.addresses[0];
         console.log(
-          `Device ${service.name} at ${address}:${service.port} found`,
+          `Device ${service.fullname} at ${address}:${service.port} found`,
         );
 
-        if (service.name.includes(name)) {
+        if (service.fullname !== undefined && service.fullname.includes(name)) {
           resolve(address);
         } else {
           // HACK: Expected the Promise rejection reason to be an Error
