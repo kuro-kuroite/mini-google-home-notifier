@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "GoogleHomeNotifier", {
   enumerable: true,
   get: function get() {
-    return _GoogleHomeNotifier.default;
+    return _google_home_notifier.default;
   }
 });
 
-var _GoogleHomeNotifier = _interopRequireDefault(require("./GoogleHomeNotifier"));
+var _google_home_notifier = _interopRequireDefault(require("./google_home_notifier"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

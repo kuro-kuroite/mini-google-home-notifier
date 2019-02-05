@@ -1,15 +1,6 @@
-import * as mdns from 'mdns';
+import * as mdns from 'mdns-js';
 
-const createMdnsBrowser = (protocol = 'googlecast') => {
-  const sequence = [
-    mdns.rst.DNSServiceResolve(),
-    'DNSServiceGetAddrInfo' in mdns.dns_sd
-      ? mdns.rst.DNSServiceGetAddrInfo()
-      : mdns.rst.getaddrinfo({ families: [4] }),
-    mdns.rst.makeAddressesUnique(),
-  ];
-
-  return mdns.createBrowser(mdns.tcp(protocol), { resolverSequence: sequence });
-};
+const createMdnsBrowser = (protocol = 'googlecast') =>
+  mdns.createBrowser(mdns.tcp(protocol));
 
 export default createMdnsBrowser;
