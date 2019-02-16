@@ -26,7 +26,10 @@ let didWarn = false;
 let didError = false;
 
 const files = glob
-  .sync('**/*.js', { ignore: ['**/node_modules/**', '**/dist/**'] })
+  .sync('**/*.js', {
+    // TODO: .prettierignore からとってこられるようにする
+    ignore: ['**/node_modules/**', '**/dist/**', 'scripts/**/!(*.babel.js)'],
+  })
   .filter(f => !onlyChanged || changedFiles.has(f));
 
 if (!files.length) {

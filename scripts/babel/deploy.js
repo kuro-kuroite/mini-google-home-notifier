@@ -6,5 +6,6 @@ var _listChangedFiles = require("../shared/listChangedFiles");
 
 /* eslint-disable import/no-extraneous-dependencies */
 var filePath = process.argv[2];
-var splitCommand = "yarn babel ".concat(filePath, " --out-dir dist").split(' ');
+var outPath = process.argv[3] || 'dist';
+var splitCommand = "yarn babel ".concat(filePath, " --out-dir ").concat(outPath).split(' ');
 (0, _listChangedFiles.exec)(splitCommand[0], splitCommand.slice(1));
