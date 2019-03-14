@@ -34,7 +34,8 @@ var changedFiles = onlyChanged ? (0, _listChangedFiles.listChangedFiles)() : nul
 var didWarn = false;
 var didError = false;
 var files = glob.sync('**/*.js', {
-  ignore: ['**/node_modules/**', '**/dist/**']
+  // TODO: .prettierignore からとってこられるようにする
+  ignore: ['**/node_modules/**', '**/dist/**', 'scripts/**/!(*.babel.js)']
 }).filter(function (f) {
   return !onlyChanged || changedFiles.has(f);
 });
