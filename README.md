@@ -14,8 +14,8 @@ $ yarn add https://github.com/kuro-kuroite/mini-google-home-notifier.git
 ### Example
 
 ```js
-// import { GoogleHomeNotifier } from 'mini-google-home-notifier';
-const GoogleHomeNotifier = require("mini-google-home-notifier").GoogleHomeNotifier;
+// import { GoogleHomeNotifier } from '@kuro-kuroite/mini-google-home-notifier';
+const GoogleHomeNotifier = require("@kuro-kuroite/mini-google-home-notifier").GoogleHomeNotifier;
 
 const options = {
   language: 'ja',
